@@ -1,0 +1,4642 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="description"
+    content="Nirbhay AI World - Artificial Intelligence, Data Science, Machine Learning, Programming, Projects and Notes."
+  >
+
+  <meta name="theme-color" content="#050816">
+
+  <title>Nirbhay AI World | AI & Data Science</title>
+
+
+  <!-- =====================================================
+       GOOGLE FONTS
+  ====================================================== -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+
+  <style>
+
+    /* =====================================================
+       GLOBAL VARIABLES
+    ====================================================== */
+
+    :root {
+
+      --bg: #050816;
+
+      --bg-2: #08101f;
+
+      --card: rgba(13, 24, 45, 0.72);
+
+      --card-hover:
+        rgba(20, 34, 61, 0.90);
+
+      --text: #f6f8ff;
+
+      --muted: #9aa8bf;
+
+      --primary: #6d7cff;
+
+      --primary-light: #8f9aff;
+
+      --blue: #26c6ff;
+
+      --cyan: #22e6d8;
+
+      --purple: #9a5cff;
+
+      --pink: #ff5fcf;
+
+      --green: #54f7a5;
+
+      --border:
+        rgba(255, 255, 255, 0.09);
+
+      --border-strong:
+        rgba(255, 255, 255, 0.15);
+
+      --shadow:
+        0 25px 80px rgba(0,0,0,0.35);
+
+      --max-width: 1200px;
+
+      --radius: 24px;
+    }
+
+
+    /* =====================================================
+       RESET
+    ====================================================== */
+
+    * {
+
+      margin: 0;
+
+      padding: 0;
+
+      box-sizing: border-box;
+
+    }
+
+
+    html {
+
+      scroll-behavior: smooth;
+
+    }
+
+
+    body {
+
+      min-height: 100vh;
+
+      color: var(--text);
+
+      font-family:
+        Inter,
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
+      background:
+
+        radial-gradient(
+          circle at 10% 10%,
+          rgba(88, 105, 255, 0.18),
+          transparent 28%
+        ),
+
+        radial-gradient(
+          circle at 85% 8%,
+          rgba(34, 230, 216, 0.10),
+          transparent 22%
+        ),
+
+        radial-gradient(
+          circle at 75% 60%,
+          rgba(154, 92, 255, 0.08),
+          transparent 25%
+        ),
+
+        linear-gradient(
+          180deg,
+          #040712 0%,
+          #07101d 48%,
+          #050816 100%
+        );
+
+      line-height: 1.6;
+
+      overflow-x: hidden;
+    }
+
+
+    body.light {
+
+      --bg: #f7f9fd;
+
+      --bg-2: #eef3fa;
+
+      --card:
+        rgba(255,255,255,0.84);
+
+      --card-hover:
+        rgba(255,255,255,0.98);
+
+      --text: #111827;
+
+      --muted: #607086;
+
+      --border:
+        rgba(15,23,42,0.10);
+
+      --border-strong:
+        rgba(15,23,42,0.16);
+
+      background:
+
+        radial-gradient(
+          circle at 10% 10%,
+          rgba(109,124,255,0.10),
+          transparent 28%
+        ),
+
+        radial-gradient(
+          circle at 90% 15%,
+          rgba(34,230,216,0.07),
+          transparent 25%
+        ),
+
+        linear-gradient(
+          180deg,
+          #fbfdff 0%,
+          #eef3fa 100%
+        );
+    }
+
+
+    a {
+
+      color: inherit;
+
+      text-decoration: none;
+
+    }
+
+
+    button,
+    input {
+
+      font: inherit;
+
+    }
+
+
+    .container {
+
+      width:
+        min(
+          var(--max-width),
+          92%
+        );
+
+      margin-inline:
+        auto;
+
+    }
+
+
+    /* =====================================================
+       BACKGROUND GRID
+    ====================================================== */
+
+    body::before {
+
+      content: "";
+
+      position: fixed;
+
+      inset: 0;
+
+      pointer-events: none;
+
+      z-index: -2;
+
+      background-image:
+
+        linear-gradient(
+          rgba(255,255,255,0.025) 1px,
+          transparent 1px
+        ),
+
+        linear-gradient(
+          90deg,
+          rgba(255,255,255,0.025) 1px,
+          transparent 1px
+        );
+
+      background-size:
+        44px 44px;
+
+      mask-image:
+        linear-gradient(
+          to bottom,
+          black,
+          transparent 80%
+        );
+    }
+
+
+    /* =====================================================
+       NAVBAR
+    ====================================================== */
+
+    .navbar {
+
+      position: sticky;
+
+      top: 0;
+
+      z-index: 1000;
+
+      background:
+        rgba(4, 7, 18, 0.72);
+
+      backdrop-filter:
+        blur(20px);
+
+      border-bottom:
+        1px solid var(--border);
+    }
+
+
+    body.light .navbar {
+
+      background:
+        rgba(250,252,255,0.78);
+
+    }
+
+
+    .nav-inner {
+
+      min-height:
+        76px;
+
+      display:
+        flex;
+
+      align-items:
+        center;
+
+      justify-content:
+        space-between;
+
+      gap:
+        20px;
+    }
+
+
+    .nav-brand {
+
+      display:
+        flex;
+
+      align-items:
+        center;
+
+      gap:
+        12px;
+
+      font-family:
+        "Space Grotesk",
+        sans-serif;
+
+      font-weight:
+        700;
+    }
+
+
+    .nav-logo {
+
+      width:
+        43px;
+
+      height:
+        43px;
+
+      display:
+        grid;
+
+      place-items:
+        center;
+
+      border-radius:
+        13px;
+
+      background:
+
+        linear-gradient(
+          135deg,
+          var(--primary),
+          var(--blue)
+        );
+
+      color:
+        white;
+
+      font-weight:
+        800;
+
+      box-shadow:
+        0 10px 35px
+        rgba(76,108,255,0.28);
+    }
+
+
+    .nav-links {
+
+      display:
+        flex;
+
+      align-items:
+        center;
+
+      gap:
+        24px;
+
+      color:
+        #b9c5d8;
+
+      font-size:
+        0.92rem;
+    }
+
+
+    body.light .nav-links {
+
+      color:
+        #526176;
+
+    }
+
+
+    .nav-links a {
+
+      position:
+        relative;
+
+      transition:
+        0.2s ease;
+    }
+
+
+    .nav-links a::after {
+
+      content:
+        "";
+
+      position:
+        absolute;
+
+      left:
+        0;
+
+      right:
+        0;
+
+      bottom:
+        -8px;
+
+      height:
+        2px;
+
+      border-radius:
+        20px;
+
+      background:
+
+        linear-gradient(
+          90deg,
+          var(--primary),
+          var(--cyan)
+        );
+
+      transform:
+        scaleX(0);
+
+      transform-origin:
+        center;
+
+      transition:
+        transform
+        0.25s ease;
+    }
+
+
+    .nav-links a:hover {
+
+      color:
+        #ffffff;
+    }
+
+
+    body.light .nav-links a:hover {
+
+      color:
+        #111827;
+    }
+
+
+    .nav-links a:hover::after {
+
+      transform:
+        scaleX(1);
+    }
+
+
+    .nav-actions {
+
+      display:
+        flex;
+
+      gap:
+        9px;
+    }
+
+
+    .icon-btn {
+
+      width:
+        42px;
+
+      height:
+        42px;
+
+      display:
+        grid;
+
+      place-items:
+        center;
+
+      border:
+        1px solid var(--border);
+
+      background:
+        rgba(255,255,255,0.04);
+
+      color:
+        var(--text);
+
+      border-radius:
+        12px;
+
+      cursor:
+        pointer;
+
+      transition:
+        0.2s ease;
+    }
+
+
+    .icon-btn:hover {
+
+      transform:
+        translateY(-2px);
+
+      border-color:
+        var(--border-strong);
+    }
+
+
+    .menu-btn {
+
+      display:
+        none;
+    }
+
+
+    /* =====================================================
+       HERO
+    ====================================================== */
+
+    .hero {
+
+      padding:
+        85px 0 50px;
+    }
+
+
+    .hero-grid {
+
+      display:
+        grid;
+
+      grid-template-columns:
+        1.16fr
+        0.84fr;
+
+      gap:
+        50px;
+
+      align-items:
+        center;
+    }
+
+
+    .eyebrow {
+
+      display:
+        inline-flex;
+
+      align-items:
+        center;
+
+      gap:
+        10px;
+
+      padding:
+        8px 14px;
+
+      border:
+        1px solid var(--border);
+
+      background:
+        rgba(255,255,255,0.035);
+
+      border-radius:
+        999px;
+
+      color:
+        #c8d3e5;
+
+      font-size:
+        0.82rem;
+
+      letter-spacing:
+        0.02em;
+    }
+
+
+    body.light .eyebrow {
+
+      color:
+        #526176;
+    }
+
+
+    .pulse-dot {
+
+      width:
+        8px;
+
+      height:
+        8px;
+
+      border-radius:
+        50%;
+
+      background:
+        var(--green);
+
+      box-shadow:
+        0 0 0 7px
+        rgba(84,247,165,0.09);
+
+      animation:
+        pulse
+        2s
+        infinite;
+    }
+
+
+    @keyframes pulse {
+
+      0%,
+      100% {
+
+        box-shadow:
+          0 0 0 7px
+          rgba(84,247,165,0.08);
+
+      }
+
+      50% {
+
+        box-shadow:
+          0 0 0 12px
+          rgba(84,247,165,0.01);
+
+      }
+
+    }
+
+
+    .hero h1 {
+
+      margin-top:
+        22px;
+
+      font-family:
+        "Space Grotesk",
+        sans-serif;
+
+      font-size:
+        clamp(
+          2.7rem,
+          6vw,
+          5.4rem
+        );
+
+      line-height:
+        0.99;
+
+      letter-spacing:
+        -0.055em;
+    }
+
+
+    .hero-highlight {
+
+      display:
+        block;
+
+      margin-top:
+        12px;
+
+      position:
+        relative;
+
+      width:
+        fit-content;
+
+      font-weight:
+        700;
+
+      background:
+
+        linear-gradient(
+          100deg,
+          #ffffff 0%,
+          #a9b0ff 30%,
+          #64dfff 58%,
+          #b985ff 85%
+        );
+
+      background-size:
+        250% auto;
+
+      -webkit-background-clip:
+        text;
+
+      background-clip:
+        text;
+
+      color:
+        transparent;
+
+      animation:
+        gradientMove
+        6s
+        linear infinite;
+    }
+
+
+    body.light .hero-highlight {
+
+      background:
+
+        linear-gradient(
+          100deg,
+          #3542a5,
+          #147aa3,
+          #7442c8
+        );
+
+      -webkit-background-clip:
+        text;
+
+      background-clip:
+        text;
+
+      color:
+        transparent;
+    }
+
+
+    @keyframes gradientMove {
+
+      0% {
+        background-position:
+          0% 50%;
+      }
+
+      50% {
+        background-position:
+          100% 50%;
+      }
+
+      100% {
+        background-position:
+          0% 50%;
+      }
+
+    }
+
+
+    .hero-description {
+
+      margin-top:
+        23px;
+
+      max-width:
+        720px;
+
+      color:
+        var(--muted);
+
+      font-size:
+        1.05rem;
+    }
+
+
+    .hero-actions {
+
+      display:
+        flex;
+
+      flex-wrap:
+        wrap;
+
+      gap:
+        12px;
+
+      margin-top:
+        29px;
+    }
+
+
+    .btn {
+
+      min-height:
+        50px;
+
+      display:
+        inline-flex;
+
+      align-items:
+        center;
+
+      justify-content:
+        center;
+
+      gap:
+        10px;
+
+      padding:
+        0 19px;
+
+      border-radius:
+        14px;
+
+      border:
+        1px solid transparent;
+
+      font-weight:
+        700;
+
+      cursor:
+        pointer;
+
+      transition:
+        transform
+        0.2s ease,
+        box-shadow
+        0.2s ease;
+    }
+
+
+    .btn-primary {
+
+      background:
+
+        linear-gradient(
+          135deg,
+          var(--primary),
+          var(--purple)
+        );
+
+      box-shadow:
+        0 18px 45px
+        rgba(111,99,255,0.24);
+    }
+
+
+    .btn-primary:hover {
+
+      transform:
+        translateY(-3px);
+
+      box-shadow:
+        0 24px 55px
+        rgba(111,99,255,0.32);
+    }
+
+
+    .btn-secondary {
+
+      border-color:
+        var(--border);
+
+      background:
+        rgba(255,255,255,0.04);
+
+      color:
+        var(--text);
+    }
+
+
+    /* =====================================================
+       ADVANCED AI LOGO CARD
+    ====================================================== */
+
+    .hero-logo-card {
+
+      position:
+        relative;
+
+      padding:
+        18px;
+
+      border:
+        1px solid var(--border);
+
+      border-radius:
+        30px;
+
+      background:
+
+        linear-gradient(
+          145deg,
+          rgba(255,255,255,0.075),
+          rgba(255,255,255,0.025)
+        );
+
+      box-shadow:
+        var(--shadow);
+
+      overflow:
+        hidden;
+    }
+
+
+    .hero-logo-card::before {
+
+      content:
+        "";
+
+      position:
+        absolute;
+
+      width:
+        220px;
+
+      height:
+        220px;
+
+      border-radius:
+        50%;
+
+      background:
+        var(--primary);
+
+      filter:
+        blur(100px);
+
+      opacity:
+        0.13;
+
+      top:
+        -90px;
+
+      right:
+        -70px;
+    }
+
+
+    .hero-logo-card::after {
+
+      content:
+        "";
+
+      position:
+        absolute;
+
+      width:
+        180px;
+
+      height:
+        180px;
+
+      border-radius:
+        50%;
+
+      background:
+        var(--cyan);
+
+      filter:
+        blur(90px);
+
+      opacity:
+        0.08;
+
+      bottom:
+        -70px;
+
+      left:
+        -50px;
+    }
+
+
+    .ai-stage {
+
+      min-height:
+        430px;
+
+      border-radius:
+        25px;
+
+      position:
+        relative;
+
+      overflow:
+        hidden;
+
+      display:
+        grid;
+
+      place-items:
+        center;
+
+      background:
+
+        radial-gradient(
+          circle at center,
+          rgba(73,99,210,0.28),
+          transparent 28%
+        ),
+
+        radial-gradient(
+          circle at 55% 60%,
+          rgba(33,214,253,0.12),
+          transparent 35%
+        ),
+
+        #071228;
+
+      border:
+        1px solid rgba(255,255,255,0.08);
+    }
+
+
+    body.light .ai-stage {
+
+      background:
+
+        radial-gradient(
+          circle at center,
+          rgba(108,126,255,0.15),
+          transparent 30%
+        ),
+
+        #eef4ff;
+    }
+
+
+    /* Animated rings */
+
+    .ring {
+
+      position:
+        absolute;
+
+      border:
+        1px solid
+        rgba(120,151,255,0.20);
+
+      border-radius:
+        50%;
+
+      animation:
+        rotateRing
+        18s
+        linear infinite;
+    }
+
+
+    .ring-1 {
+
+      width:
+        82%;
+
+      height:
+        82%;
+    }
+
+
+    .ring-2 {
+
+      width:
+        62%;
+
+      height:
+        62%;
+
+      animation-duration:
+        13s;
+
+      animation-direction:
+        reverse;
+    }
+
+
+    .ring-3 {
+
+      width:
+        42%;
+
+      height:
+        42%;
+
+      animation-duration:
+        9s;
+    }
+
+
+    @keyframes rotateRing {
+
+      from {
+
+        transform:
+          rotate(0deg);
+
+      }
+
+      to {
+
+        transform:
+          rotate(360deg);
+
+      }
+
+    }
+
+
+    /* Floating particles */
+
+    .particle {
+
+      position:
+        absolute;
+
+      width:
+        5px;
+
+      height:
+        5px;
+
+      border-radius:
+        50%;
+
+      background:
+        #69d8ff;
+
+      box-shadow:
+        0 0 16px
+        #69d8ff;
+
+      animation:
+        floatParticle
+        5s
+        ease-in-out
+        infinite;
+    }
+
+
+    .p1 {
+      top: 18%;
+      left: 22%;
+    }
+
+
+    .p2 {
+      top: 28%;
+      right: 18%;
+      animation-delay: 1s;
+    }
+
+
+    .p3 {
+      bottom: 20%;
+      left: 17%;
+      animation-delay: 2s;
+    }
+
+
+    .p4 {
+      bottom: 26%;
+      right: 25%;
+      animation-delay: 3s;
+    }
+
+
+    .p5 {
+      top: 46%;
+      left: 10%;
+      animation-delay: 4s;
+    }
+
+
+    @keyframes floatParticle {
+
+      0%,
+      100% {
+
+        transform:
+          translateY(0)
+          scale(1);
+
+        opacity:
+          0.5;
+      }
+
+      50% {
+
+        transform:
+          translateY(-18px)
+          scale(1.4);
+
+        opacity:
+          1;
+      }
+
+    }
+
+
+    /* MAIN BRAND TEXT */
+
+    .brand-display {
+
+      position:
+        relative;
+
+      z-index:
+        5;
+
+      text-align:
+        center;
+
+      transform:
+        translateY(-4px);
+
+      padding:
+        10px;
+    }
+
+
+    .brand-display-main {
+
+      position:
+        relative;
+
+      display:
+        inline-block;
+
+      font-family:
+        "Space Grotesk",
+        sans-serif;
+
+      font-size:
+        clamp(
+          2rem,
+          4vw,
+          3.3rem
+        );
+
+      font-weight:
+        700;
+
+      letter-spacing:
+        -0.065em;
+
+      line-height:
+        0.95;
+
+      background:
+
+        linear-gradient(
+          110deg,
+          #ffffff 0%,
+          #8fa0ff 30%,
+          #4be0ff 55%,
+          #ffffff 75%,
+          #a66dff 100%
+        );
+
+      background-size:
+        250% auto;
+
+      -webkit-background-clip:
+        text;
+
+      background-clip:
+        text;
+
+      color:
+        transparent;
+
+      animation:
+        brandShine
+        5s
+        ease-in-out
+        infinite;
+    }
+
+
+    @keyframes brandShine {
+
+      0% {
+
+        background-position:
+          0% 50%;
+
+      }
+
+      50% {
+
+        background-position:
+          100% 50%;
+
+      }
+
+      100% {
+
+        background-position:
+          0% 50%;
+
+      }
+
+    }
+
+
+    .brand-display-main::after {
+
+      content:
+        "Nirbhay AI World";
+
+      position:
+        absolute;
+
+      left:
+        0;
+
+      top:
+        0;
+
+      width:
+        100%;
+
+      height:
+        100%;
+
+      background:
+        linear-gradient(
+          120deg,
+          transparent 25%,
+          rgba(255,255,255,0.8) 50%,
+          transparent 75%
+        );
+
+      background-size:
+        200% 100%;
+
+      -webkit-background-clip:
+        text;
+
+      background-clip:
+        text;
+
+      color:
+        transparent;
+
+      animation:
+        textSweep
+        4.5s
+        linear infinite;
+
+      opacity:
+        0.7;
+    }
+
+
+    @keyframes textSweep {
+
+      0% {
+
+        background-position:
+          -100% 0;
+
+      }
+
+      100% {
+
+        background-position:
+          100% 0;
+
+      }
+
+    }
+
+
+    .brand-display-sub {
+
+      margin-top:
+        16px;
+
+      font-size:
+        0.72rem;
+
+      letter-spacing:
+        0.42em;
+
+      font-weight:
+        800;
+
+      color:
+        #95caff;
+
+      text-transform:
+        uppercase;
+    }
+
+
+    body.light .brand-display-sub {
+
+      color:
+        #536cc8;
+    }
+
+
+    .brand-line {
+
+      width:
+        90px;
+
+      height:
+        2px;
+
+      margin:
+        17px auto 0;
+
+      border-radius:
+        100px;
+
+      background:
+
+        linear-gradient(
+          90deg,
+          transparent,
+          var(--blue),
+          var(--purple),
+          transparent
+        );
+
+      box-shadow:
+        0 0 20px
+        rgba(60,200,255,0.6);
+    }
+
+
+    /* Mini stats */
+
+    .mini-stats {
+
+      display:
+        grid;
+
+      grid-template-columns:
+        repeat(3,1fr);
+
+      gap:
+        10px;
+
+      margin-top:
+        14px;
+    }
+
+
+    .mini-stat {
+
+      padding:
+        14px 10px;
+
+      text-align:
+        center;
+
+      border:
+        1px solid var(--border);
+
+      background:
+        rgba(255,255,255,0.03);
+
+      border-radius:
+        15px;
+    }
+
+
+    .mini-stat strong {
+
+      display:
+        block;
+
+      font-family:
+        "Space Grotesk",
+        sans-serif;
+
+      font-size:
+        1.3rem;
+    }
+
+
+    .mini-stat span {
+
+      font-size:
+        0.74rem;
+
+      color:
+        var(--muted);
+    }
+
+
+    /* =====================================================
+       SECTION
+    ====================================================== */
+
+    section {
+
+      padding:
+        76px 0;
+    }
+
+
+    .section-head {
+
+      margin-bottom:
+        26px;
+    }
+
+
+    .section-kicker {
+
+      color:
+        #7e8fab;
+
+      font-size:
+        0.72rem;
+
+      font-weight:
+        800;
+
+      letter-spacing:
+        0.18em;
+
+      text-transform:
+        uppercase;
+    }
+
+
+    .section-title {
+
+      margin-top:
+        7px;
+
+      font-family:
+        "Space Grotesk",
+        sans-serif;
+
+      font-size:
+        clamp(
+          1.8rem,
+          4vw,
+          2.8rem
+        );
+
+      line-height:
+        1.05;
+
+      letter-spacing:
+        -0.045em;
+    }
+
+
+    .section-desc {
+
+      max-width:
+        690px;
+
+      margin-top:
+        11px;
+
+      color:
+        var(--muted);
+    }
+
+
+    /* =====================================================
+       COMMON CARD
+    ====================================================== */
+
+    .card {
+
+      border:
+        1px solid var(--border);
+
+      background:
+        var(--card);
+
+      backdrop-filter:
+        blur(14px);
+
+      border-radius:
+        var(--radius);
+
+      box-shadow:
+        var(--shadow);
+
+      transition:
+        transform
+        0.25s ease,
+        border-color
+        0.25s ease,
+        background
+        0.25s ease;
+    }
+
+
+    .card:hover {
+
+      transform:
+        translateY(-5px);
+
+      border-color:
+        var(--border-strong);
+
+      background:
+        var(--card-hover);
+    }
+
+
+    /* =====================================================
+       STATS
+    ====================================================== */
+
+    .stats {
+
+      display:
+        grid;
+
+      grid-template-columns:
+        repeat(4, 1fr);
+
+      gap:
+        15px;
+    }
+
+
+    .stat-card {
+
+      padding:
+        23px;
+    }
+
+
+    .stat-card strong {
+
+      font-family:
+        "Space Grotesk",
+        sans-serif;
+
+      font-size:
+        2rem;
+    }
+
+
+    .stat-card span {
+
+      display:
+        block;
+
+      margin-top:
+        3px;
+
+      color:
+        var(--muted);
+
+      font-size:
+        0.86rem;
+    }
+
+
+    /* =====================================================
+       SEARCH
+    ====================================================== */
+
+    .toolbar {
+
+      display:
+        flex;
+
+      gap:
+        12px;
+
+      flex-wrap:
+        wrap;
+
+      margin-bottom:
+        21px;
+    }
+
+
+    .search {
+
+      flex:
+        1;
+
+      min-width:
+        250px;
+
+      display:
+        flex;
+
+      align-items:
+        center;
+
+      gap:
+        10px;
+
+      padding:
+        0 15px;
+
+      border:
+        1px solid var(--border);
+
+      background:
+        rgba(255,255,255,0.04);
+
+      border-radius:
+        14px;
+    }
+
+
+    .search input {
+
+      width:
+        100%;
+
+      padding:
+        14px 0;
+
+      background:
+        transparent;
+
+      border:
+        none;
+
+      outline:
+        none;
+
+      color:
+        var(--text);
+    }
+
+
+    .search input::placeholder {
+
+      color:
+        var(--muted);
+    }
+
+
+    .filter-btn {
+
+      min-height:
+        48px;
+
+      padding:
+        0 16px;
+
+      border:
+        1px solid var(--border);
+
+      background:
+        rgba(255,255,255,0.04);
+
+      color:
+        var(--text);
+
+      border-radius:
+        13px;
+
+      cursor:
+        pointer;
+    }
+
+
+    /* =====================================================
+       VIDEO GRID
+    ====================================================== */
+
+    .video-grid {
+
+      display:
+        grid;
+
+      grid-template-columns:
+        repeat(3, 1fr);
+
+      gap:
+        19px;
+    }
+
+
+    .video-card {
+
+      overflow:
+        hidden;
+    }
+
+
+    .video-frame {
+
+      aspect-ratio:
+        16 / 9;
+
+      background:
+        #03070d;
+    }
+
+
+    .video-frame iframe {
+
+      width:
+        100%;
+
+      height:
+        100%;
+
+      display:
+        block;
+
+      border:
+        0;
+    }
+
+
+    .video-body {
+
+      padding:
+        18px;
+    }
+
+
+    .tag {
+
+      display:
+        inline-flex;
+
+      padding:
+        6px 9px;
+
+      border-radius:
+        8px;
+
+      background:
+        rgba(109,124,255,0.13);
+
+      color:
+        #aab7ff;
+
+      font-size:
+        0.70rem;
+
+      font-weight:
+        800;
+    }
+
+
+    .video-title {
+
+      margin-top:
+        12px;
+
+      font-size:
+        1.02rem;
+
+      font-weight:
+        700;
+    }
+
+
+    .video-desc {
+
+      margin-top:
+        6px;
+
+      color:
+        var(--muted);
+
+      font-size:
+        0.86rem;
+    }
+
+
+    /* =====================================================
+       NOTES
+    ====================================================== */
+
+    .notes-grid {
+
+      display:
+        grid;
+
+      grid-template-columns:
+        repeat(3, 1fr);
+
+      gap:
+        19px;
+    }
+
+
+    .note-card {
+
+      min-height:
+        220px;
+
+      padding:
+        21px;
+
+      display:
+        flex;
+
+      flex-direction:
+        column;
+    }
+
+
+    .note-icon {
+
+      width:
+        48px;
+
+      height:
+        48px;
+
+      border-radius:
+        14px;
+
+      display:
+        grid;
+
+      place-items:
+        center;
+
+      background:
+        rgba(109,124,255,0.10);
+
+      font-size:
+        1.4rem;
+    }
+
+
+    .note-card h3 {
+
+      margin-top:
+        17px;
+
+      font-size:
+        1rem;
+    }
+
+
+    .note-card p {
+
+      margin-top:
+        6px;
+
+      color:
+        var(--muted);
+
+      font-size:
+        0.85rem;
+
+      flex:
+        1;
+    }
+
+
+    .note-actions {
+
+      display:
+        flex;
+
+      gap:
+        9px;
+
+      margin-top:
+        18px;
+    }
+
+
+    .small-btn {
+
+      display:
+        inline-flex;
+
+      align-items:
+        center;
+
+      justify-content:
+        center;
+
+      padding:
+        9px 12px;
+
+      border:
+        1px solid var(--border);
+
+      border-radius:
+        10px;
+
+      background:
+        rgba(255,255,255,0.04);
+
+      font-size:
+        0.81rem;
+
+      font-weight:
+        700;
+
+      color:
+        var(--text);
+
+      transition:
+        0.2s ease;
+    }
+
+
+    .small-btn:hover {
+
+      transform:
+        translateY(-2px);
+    }
+
+
+    /* =====================================================
+       PROJECTS
+    ====================================================== */
+
+    .project-grid {
+
+      display:
+        grid;
+
+      grid-template-columns:
+        repeat(3, 1fr);
+
+      gap:
+        19px;
+    }
+
+
+    .project-card {
+
+      overflow:
+        hidden;
+    }
+
+
+    .project-cover {
+
+      aspect-ratio:
+        16 / 9;
+
+      display:
+        grid;
+
+      place-items:
+        center;
+
+      background:
+
+        linear-gradient(
+          135deg,
+          rgba(109,124,255,0.38),
+          rgba(33,212,253,0.12)
+        ),
+
+        #0a1530;
+
+      font-size:
+        3rem;
+    }
+
+
+    .project-body {
+
+      padding:
+        18px;
+    }
+
+
+    .project-body p {
+
+      margin:
+        7px 0 15px;
+
+      color:
+        var(--muted);
+
+      font-size:
+        0.87rem;
+    }
+
+
+    /* =====================================================
+       ABOUT
+    ====================================================== */
+
+    .about-grid {
+
+      display:
+        grid;
+
+      grid-template-columns:
+        1fr 1fr;
+
+      gap:
+        19px;
+    }
+
+
+    .about-card {
+
+      padding:
+        25px;
+    }
+
+
+    .about-card p {
+
+      margin-top:
+        10px;
+
+      color:
+        var(--muted);
+    }
+
+
+    .about-list {
+
+      display:
+        grid;
+
+      gap:
+        13px;
+
+      margin-top:
+        19px;
+    }
+
+
+    .about-item {
+
+      display:
+        flex;
+
+      gap:
+        12px;
+
+      align-items:
+        flex-start;
+
+      color:
+        #d7dfec;
+    }
+
+
+    body.light .about-item {
+
+      color:
+        #374151;
+    }
+
+
+    .about-icon {
+
+      width:
+        34px;
+
+      height:
+        34px;
+
+      display:
+        grid;
+
+      place-items:
+        center;
+
+      border-radius:
+        10px;
+
+      background:
+        rgba(109,124,255,0.11);
+
+      flex-shrink:
+        0;
+    }
+
+
+    /* =====================================================
+       CONTACT
+    ====================================================== */
+
+    .contact-grid {
+
+      display:
+        grid;
+
+      grid-template-columns:
+        0.9fr 1.1fr;
+
+      gap:
+        19px;
+    }
+
+
+    .contact-card {
+
+      padding:
+        26px;
+    }
+
+
+    .contact-list {
+
+      display:
+        grid;
+
+      gap:
+        13px;
+
+      margin-top:
+        18px;
+    }
+
+
+    .contact-row {
+
+      display:
+        flex;
+
+      align-items:
+        center;
+
+      gap:
+        12px;
+
+      color:
+        #d5ddea;
+    }
+
+
+    body.light .contact-row {
+
+      color:
+        #374151;
+    }
+
+
+    .contact-icon {
+
+      width:
+        40px;
+
+      height:
+        40px;
+
+      display:
+        grid;
+
+      place-items:
+        center;
+
+      border:
+        1px solid var(--border);
+
+      border-radius:
+        11px;
+
+      flex-shrink:
+        0;
+    }
+
+
+    .socials {
+
+      display:
+        flex;
+
+      flex-wrap:
+        wrap;
+
+      gap:
+        9px;
+
+      margin-top:
+        20px;
+    }
+
+
+    .social {
+
+      padding:
+        9px 12px;
+
+      border:
+        1px solid var(--border);
+
+      background:
+        rgba(255,255,255,0.03);
+
+      border-radius:
+        10px;
+
+      font-size:
+        0.82rem;
+
+      color:
+        #cbd5e5;
+    }
+
+
+    body.light .social {
+
+      color:
+        #475569;
+    }
+
+
+    /* =====================================================
+       FOOTER
+    ====================================================== */
+
+    footer {
+
+      padding:
+        28px 0;
+
+      margin-top:
+        30px;
+
+      border-top:
+        1px solid var(--border);
+
+      color:
+        #8491a6;
+
+      font-size:
+        0.83rem;
+    }
+
+
+    .footer-inner {
+
+      display:
+        flex;
+
+      align-items:
+        center;
+
+      justify-content:
+        space-between;
+
+      gap:
+        20px;
+    }
+
+
+    /* =====================================================
+       EMPTY
+    ====================================================== */
+
+    .empty {
+
+      grid-column:
+        1 / -1;
+
+      padding:
+        35px;
+
+      border:
+        1px dashed var(--border);
+
+      border-radius:
+        16px;
+
+      text-align:
+        center;
+
+      color:
+        var(--muted);
+    }
+
+
+    /* =====================================================
+       MOBILE
+    ====================================================== */
+
+    @media (max-width: 1000px) {
+
+      .hero-grid {
+
+        grid-template-columns:
+          1fr;
+      }
+
+
+      .video-grid,
+      .notes-grid,
+      .project-grid {
+
+        grid-template-columns:
+          repeat(2, 1fr);
+      }
+
+
+      .stats {
+
+        grid-template-columns:
+          repeat(2,1fr);
+      }
+
+
+      .about-grid,
+      .contact-grid {
+
+        grid-template-columns:
+          1fr;
+      }
+
+
+      .nav-links {
+
+        display:
+          none;
+      }
+
+
+      .menu-btn {
+
+        display:
+          grid;
+      }
+
+    }
+
+
+    @media (max-width: 650px) {
+
+      .hero {
+
+        padding-top:
+          58px;
+      }
+
+
+      section {
+
+        padding:
+          55px 0;
+      }
+
+
+      .video-grid,
+      .notes-grid,
+      .project-grid,
+      .stats {
+
+        grid-template-columns:
+          1fr;
+      }
+
+
+      .hero-actions {
+
+        flex-direction:
+          column;
+      }
+
+
+      .btn {
+
+        width:
+          100%;
+      }
+
+
+      .mini-stats {
+
+        grid-template-columns:
+          1fr;
+      }
+
+
+      .footer-inner {
+
+        flex-direction:
+          column;
+
+        align-items:
+          flex-start;
+      }
+
+
+      .ai-stage {
+
+        min-height:
+          360px;
+      }
+
+
+      .brand-display-main {
+
+        font-size:
+          2rem;
+      }
+
+
+      .brand-display-sub {
+
+        font-size:
+          0.60rem;
+
+        letter-spacing:
+          0.30em;
+      }
+
+    }
+
+
+  </style>
+
+</head>
+
+
+
+<body>
+
+
+  <!-- =====================================================
+       NAVBAR
+  ====================================================== -->
+
+  <nav class="navbar">
+
+    <div class="container nav-inner">
+
+
+      <a
+        href="#home"
+        class="nav-brand"
+      >
+
+        <span class="nav-logo">
+          N
+        </span>
+
+        <span id="navBrandName">
+          Nirbhay AI World
+        </span>
+
+      </a>
+
+
+      <div class="nav-links">
+
+        <a href="#home">
+          Home
+        </a>
+
+        <a href="#videos">
+          Videos
+        </a>
+
+        <a href="#notes">
+          Notes
+        </a>
+
+        <a href="#projects">
+          Projects
+        </a>
+
+        <a href="#about">
+          About
+        </a>
+
+        <a href="#contact">
+          Contact
+        </a>
+
+      </div>
+
+
+      <div class="nav-actions">
+
+        <button
+          class="icon-btn"
+          id="themeBtn"
+          title="Change theme"
+        >
+          ☼
+        </button>
+
+
+        <button
+          class="icon-btn menu-btn"
+          id="menuBtn"
+          title="Menu"
+        >
+          ☰
+        </button>
+
+      </div>
+
+    </div>
+
+  </nav>
+
+
+
+  <main>
+
+
+    <!-- =====================================================
+         HERO
+    ====================================================== -->
+
+    <section
+      class="hero"
+      id="home"
+    >
+
+      <div class="container hero-grid">
+
+
+        <!-- LEFT -->
+
+        <div>
+
+
+          <span class="eyebrow">
+
+            <span class="pulse-dot"></span>
+
+            AI • DATA SCIENCE • PROGRAMMING
+
+          </span>
+
+
+          <h1>
+
+            Learn.
+
+            <span class="hero-highlight">
+              Build.
+            </span>
+
+            Share.
+
+          </h1>
+
+
+          <p
+            class="hero-description"
+            id="heroDescription"
+          >
+          </p>
+
+
+          <div class="hero-actions">
+
+
+            <a
+              class="btn btn-primary"
+              id="youtubeBtn"
+              href="#"
+              target="_blank"
+              rel="noopener"
+            >
+
+              ▶
+
+              Visit YouTube
+
+            </a>
+
+
+            <a
+              class="btn btn-secondary"
+              href="#videos"
+            >
+
+              Explore Lectures
+
+            </a>
+
+
+          </div>
+
+
+        </div>
+
+
+
+        <!-- RIGHT : ADVANCED LOGO -->
+
+        <div class="hero-logo-card">
+
+
+          <div class="ai-stage">
+
+
+            <!-- AI RINGS -->
+
+            <div class="ring ring-1"></div>
+
+            <div class="ring ring-2"></div>
+
+            <div class="ring ring-3"></div>
+
+
+            <!-- PARTICLES -->
+
+            <span class="particle p1"></span>
+
+            <span class="particle p2"></span>
+
+            <span class="particle p3"></span>
+
+            <span class="particle p4"></span>
+
+            <span class="particle p5"></span>
+
+
+            <!-- BRAND -->
+
+            <div class="brand-display">
+
+
+              <div class="brand-display-main">
+                Nirbhay AI World
+              </div>
+
+
+              <div class="brand-display-sub">
+                INTELLIGENCE • INNOVATION • LEARNING
+              </div>
+
+
+              <div class="brand-line"></div>
+
+
+            </div>
+
+
+          </div>
+
+
+          <!-- COUNTERS -->
+
+          <div class="mini-stats">
+
+
+            <div class="mini-stat">
+
+              <strong id="videoCount">
+                0
+              </strong>
+
+              <span>
+                Videos
+              </span>
+
+            </div>
+
+
+            <div class="mini-stat">
+
+              <strong id="noteCount">
+                0
+              </strong>
+
+              <span>
+                Notes
+              </span>
+
+            </div>
+
+
+            <div class="mini-stat">
+
+              <strong id="projectCount">
+                0
+              </strong>
+
+              <span>
+                Projects
+              </span>
+
+            </div>
+
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         TOPIC CARDS
+    ====================================================== -->
+
+    <section>
+
+      <div class="container">
+
+        <div class="stats">
+
+
+          <div class="card stat-card">
+
+            <strong>
+              AI
+            </strong>
+
+            <span>
+              Artificial Intelligence
+            </span>
+
+          </div>
+
+
+          <div class="card stat-card">
+
+            <strong>
+              DS
+            </strong>
+
+            <span>
+              Data Science
+            </span>
+
+          </div>
+
+
+          <div class="card stat-card">
+
+            <strong>
+              ML
+            </strong>
+
+            <span>
+              Machine Learning
+            </span>
+
+          </div>
+
+
+          <div class="card stat-card">
+
+            <strong>
+              C++
+            </strong>
+
+            <span>
+              Programming & DSA
+            </span>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         VIDEOS
+    ====================================================== -->
+
+    <section id="videos">
+
+      <div class="container">
+
+
+        <div class="section-head">
+
+
+          <div>
+
+            <div class="section-kicker">
+              YOUTUBE LIBRARY
+            </div>
+
+            <h2 class="section-title">
+              Lectures & Tutorials
+            </h2>
+
+            <p class="section-desc">
+              Watch your educational videos directly
+              from the website.
+            </p>
+
+          </div>
+
+
+        </div>
+
+
+        <div class="toolbar">
+
+
+          <label class="search">
+
+            🔍
+
+            <input
+              id="videoSearch"
+              type="search"
+              placeholder="Search lectures..."
+            >
+
+          </label>
+
+
+          <button
+            class="filter-btn"
+            id="allVideosBtn"
+          >
+            Show All
+          </button>
+
+
+        </div>
+
+
+        <div
+          class="video-grid"
+          id="videoGrid"
+        >
+        </div>
+
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         NOTES
+    ====================================================== -->
+
+    <section id="notes">
+
+      <div class="container">
+
+
+        <div class="section-head">
+
+
+          <div>
+
+            <div class="section-kicker">
+              STUDY MATERIAL
+            </div>
+
+            <h2 class="section-title">
+              Notes & PDFs
+            </h2>
+
+            <p class="section-desc">
+              Download and read useful study material.
+            </p>
+
+          </div>
+
+
+        </div>
+
+
+        <div
+          class="notes-grid"
+          id="notesGrid"
+        >
+        </div>
+
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         PROJECTS
+    ====================================================== -->
+
+    <section id="projects">
+
+      <div class="container">
+
+
+        <div class="section-head">
+
+
+          <div>
+
+            <div class="section-kicker">
+              PORTFOLIO
+            </div>
+
+            <h2 class="section-title">
+              Projects & Experiments
+            </h2>
+
+            <p class="section-desc">
+              Showcase AI, ML, Data Science,
+              automation and programming projects.
+            </p>
+
+          </div>
+
+
+        </div>
+
+
+        <div
+          class="project-grid"
+          id="projectGrid"
+        >
+        </div>
+
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         ABOUT
+    ====================================================== -->
+
+    <section id="about">
+
+      <div class="container">
+
+
+        <div class="section-head">
+
+
+          <div>
+
+            <div class="section-kicker">
+              ABOUT
+            </div>
+
+            <h2 class="section-title">
+              About Nirbhay AI World
+            </h2>
+
+            <p class="section-desc">
+              A platform for learning,
+              building and sharing technology.
+            </p>
+
+          </div>
+
+
+        </div>
+
+
+        <div class="about-grid">
+
+
+          <div class="card about-card">
+
+
+            <h3>
+              About Me
+            </h3>
+
+
+            <p id="aboutText">
+            </p>
+
+
+            <div class="about-list">
+
+
+              <div class="about-item">
+
+                <span class="about-icon">
+                  🎓
+                </span>
+
+                <div>
+
+                  <strong>
+                    Learn
+                  </strong>
+
+                  <br>
+
+                  <small style="color:var(--muted)">
+                    AI, Data Science,
+                    Machine Learning,
+                    Python and C++.
+                  </small>
+
+                </div>
+
+              </div>
+
+
+              <div class="about-item">
+
+                <span class="about-icon">
+                  🚀
+                </span>
+
+                <div>
+
+                  <strong>
+                    Build
+                  </strong>
+
+                  <br>
+
+                  <small style="color:var(--muted)">
+                    Practical projects
+                    and useful applications.
+                  </small>
+
+                </div>
+
+              </div>
+
+
+              <div class="about-item">
+
+                <span class="about-icon">
+                  📚
+                </span>
+
+                <div>
+
+                  <strong>
+                    Share
+                  </strong>
+
+                  <br>
+
+                  <small style="color:var(--muted)">
+                    Videos, notes and
+                    educational resources.
+                  </small>
+
+                </div>
+
+              </div>
+
+
+            </div>
+
+          </div>
+
+
+
+          <div class="card about-card">
+
+
+            <h3>
+              What You'll Find
+            </h3>
+
+
+            <div class="about-list">
+
+
+              <div class="about-item">
+
+                <span class="about-icon">
+                  ▶
+                </span>
+
+                <div>
+                  AI and programming
+                  lectures
+                </div>
+
+              </div>
+
+
+              <div class="about-item">
+
+                <span class="about-icon">
+                  📄
+                </span>
+
+                <div>
+                  PDF notes and
+                  study material
+                </div>
+
+              </div>
+
+
+              <div class="about-item">
+
+                <span class="about-icon">
+                  💡
+                </span>
+
+                <div>
+                  AI / ML /
+                  Data Science projects
+                </div>
+
+              </div>
+
+
+              <div class="about-item">
+
+                <span class="about-icon">
+                  🧑‍💻
+                </span>
+
+                <div>
+                  Programming and
+                  development resources
+                </div>
+
+              </div>
+
+
+            </div>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         CONTACT
+    ====================================================== -->
+
+    <section id="contact">
+
+      <div class="container">
+
+
+        <div class="section-head">
+
+
+          <div>
+
+            <div class="section-kicker">
+              CONTACT
+            </div>
+
+            <h2 class="section-title">
+              Let's Connect
+            </h2>
+
+            <p class="section-desc">
+              Connect for educational collaboration,
+              projects and feedback.
+            </p>
+
+          </div>
+
+
+        </div>
+
+
+        <div class="contact-grid">
+
+
+          <div class="card contact-card">
+
+
+            <h3>
+              Contact Details
+            </h3>
+
+
+            <div class="contact-list">
+
+
+              <a
+                class="contact-row"
+                id="emailLink"
+                href="#"
+              >
+
+                <div class="contact-icon">
+                  ✉
+                </div>
+
+                <span id="emailText">
+                </span>
+
+              </a>
+
+
+              <a
+                class="contact-row"
+                id="phoneLink"
+                href="#"
+              >
+
+                <div class="contact-icon">
+                  ☎
+                </div>
+
+                <span id="phoneText">
+                </span>
+
+              </a>
+
+
+              <div class="contact-row">
+
+                <div class="contact-icon">
+                  ◎
+                </div>
+
+                <span id="instagramText">
+                </span>
+
+              </div>
+
+
+            </div>
+
+
+            <div
+              class="socials"
+              id="socialLinks"
+            >
+            </div>
+
+
+          </div>
+
+
+
+          <div class="card contact-card">
+
+
+            <h3>
+              Quick Message
+            </h3>
+
+
+            <p
+              style="
+                color:var(--muted);
+                margin-top:8px;
+              "
+            >
+              Click below to open your
+              email application.
+            </p>
+
+
+            <a
+              class="btn btn-primary"
+              id="mailBtn"
+              href="#"
+              style="
+                margin-top:20px;
+                width:max-content;
+              "
+            >
+              ✉ Send Email
+            </a>
+
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+  </main>
+
+
+
+  <!-- =====================================================
+       FOOTER
+  ====================================================== -->
+
+  <footer>
+
+    <div class="container footer-inner">
+
+      <span id="footerText">
+      </span>
+
+      <span>
+        Built for Learning • Building • Sharing
+      </span>
+
+    </div>
+
+  </footer>
+
+
+
+  <!-- =====================================================
+       JAVASCRIPT
+  ====================================================== -->
+
+  <script>
+
+
+    /* =====================================================
+       ⭐⭐⭐ EDIT YOUR WEBSITE HERE ⭐⭐⭐
+
+       Normally, this is the ONLY section
+       you need to edit.
+    ====================================================== */
+
+
+    const SITE_DATA = {
+
+
+      /* =====================================================
+         WEBSITE DETAILS
+      ====================================================== */
+
+      name:
+        "Nirbhay AI World",
+
+
+      tagline:
+        "Artificial Intelligence | Data Science | Projects | Notes",
+
+
+      heroDescription:
+        "Welcome to Nirbhay AI World — a learning platform where I share Artificial Intelligence, Data Science, Machine Learning, programming lectures, projects and useful study material.",
+
+
+      about:
+        "I am Nirbhay Srivastava, a B.Tech student interested in Artificial Intelligence, Data Science, Machine Learning and programming. I created this website to share educational videos, notes, projects and useful learning resources.",
+
+
+
+      /* =====================================================
+         CONTACT DETAILS
+      ====================================================== */
+
+      youtubeChannel:
+        "https://www.youtube.com/",
+
+
+      email:
+        "srivastavnirbhay781@gmail.com",
+
+
+      phone:
+        "+917905955005",
+
+
+      instagram:
+        "@nirbhaysrivastava__",
+
+
+
+      /* =====================================================
+         SOCIAL LINKS
+      ====================================================== */
+
+      socialLinks: [
+
+        {
+          label:
+            "YouTube",
+
+          url:
+            "https://www.youtube.com/"
+        },
+
+
+        {
+          label:
+            "Instagram",
+
+          url:
+            "https://www.instagram.com/"
+        },
+
+
+        {
+          label:
+            "GitHub",
+
+          url:
+            "https://github.com/"
+        }
+
+      ],
+
+
+
+      /* =====================================================
+         🎬 YOUTUBE VIDEOS
+
+         ALL OF THESE URL TYPES WORK:
+
+         watch
+         live
+         youtu.be
+         shorts
+         embed
+      ====================================================== */
+
+      videos: [
+
+
+        {
+          title:
+            "Lecture 1",
+
+          description:
+            "Add your lecture description here.",
+
+          category:
+            "AI",
+
+          youtube:
+            "https://youtu.be/ktt92gS6RrM?si=YdTvm_cZfDHEEDZY"
+        },
+
+
+        {
+          title:
+            "Lecture 2",
+
+          description:
+            "Add your lecture description here.",
+
+          category:
+            "AI",
+
+          youtube:
+            "https://www.youtube.com/watch?v=6ESgLnGP3DM"
+        },
+
+
+        {
+          title:
+            "Lecture 3",
+
+          description:
+            "Add your lecture description here.",
+
+          category:
+            "Data Science",
+
+          youtube:
+            "https://www.youtube.com/watch?v=6es646x-LlA"
+        },
+
+
+        {
+          title:
+            "Lecture 4",
+
+          description:
+            "Add your lecture description here.",
+
+          category:
+            "Programming",
+
+          youtube:
+            "https://www.youtube.com/watch?v=1y0EtLPLwf8"
+        },
+
+
+        {
+          title:
+            "Lecture 5",
+
+          description:
+            "Add your lecture description here.",
+
+          category:
+            "Machine Learning",
+
+          youtube:
+            "https://www.youtube.com/watch?v=iRGBpOCI_9s"
+        },
+
+
+        {
+          title:
+            "Lecture 6",
+
+          description:
+            "My YouTube lecture.",
+
+          category:
+            "Artificial Intelligence",
+
+          youtube:
+            "https://www.youtube.com/live/OieGFt2qVZI?si=eHK-ViCkO9OMbvN4"
+        },
+
+
+
+      ],
+
+
+
+      /* =====================================================
+         📚 PDF NOTES
+
+         Put PDFs inside the "pdfs" folder.
+      ====================================================== */
+
+      notes: [
+
+
+        {
+          title:
+            "Introduction to AI Notes",
+
+          description:
+            "Beginner-friendly AI study material.",
+
+          file:
+            "pdfs/Introduction_AI.pdf"
+        },
+
+
+        {
+          title:
+            "State Space Search Notes",
+
+          description:
+            "Notes for state-space search concepts.",
+
+          file:
+            "pdfs/StateSpaceSearch.pdf"
+        }
+
+      ],
+
+
+
+      /* =====================================================
+         🚀 PROJECTS
+      ====================================================== */
+
+      projects: [
+
+
+        {
+          title:
+            "AI Chatbot",
+
+          description:
+            "A learning project demonstrating a simple AI chatbot.",
+
+          icon:
+            "🤖",
+
+          link:
+            "#"
+        },
+
+
+        {
+          title:
+            "Data Science Project",
+
+          description:
+            "Add your Data Science or Machine Learning project here.",
+
+          icon:
+            "📊",
+
+          link:
+            "#"
+        },
+
+
+        {
+          title:
+            "Automation Project",
+
+          description:
+            "Add your n8n, AI agent or automation project here.",
+
+          icon:
+            "⚡",
+
+          link:
+            "#"
+        }
+
+      ]
+
+    };
+
+
+
+    /* =====================================================
+       WEBSITE ENGINE
+       DO NOT EDIT BELOW THIS LINE
+    ====================================================== */
+
+
+    function $(selector) {
+
+      return document.querySelector(
+        selector
+      );
+
+    }
+
+
+
+    /* =====================================================
+       YOUTUBE ID EXTRACTOR
+
+       Supports:
+
+       1. https://www.youtube.com/watch?v=ABC
+       2. https://youtu.be/ABC
+       3. https://www.youtube.com/live/ABC
+       4. https://www.youtube.com/shorts/ABC
+       5. https://www.youtube.com/embed/ABC
+    ====================================================== */
+
+    function youtubeId(url) {
+
+
+      try {
+
+        const value =
+          new URL(url);
+
+
+        /* WATCH */
+
+        const watchId =
+          value.searchParams.get(
+            "v"
+          );
+
+
+        if (watchId) {
+
+          return watchId;
+
+        }
+
+
+        /* YOUTU.BE */
+
+        if (
+          value.hostname ===
+            "youtu.be" ||
+
+          value.hostname ===
+            "www.youtu.be"
+        ) {
+
+          return value.pathname
+            .split("/")
+            .filter(Boolean)[0]
+            || "";
+
+        }
+
+
+        /* LIVE */
+
+        if (
+          value.pathname.startsWith(
+            "/live/"
+          )
+        ) {
+
+          return value.pathname
+            .split("/live/")[1]
+            .split("/")[0];
+
+        }
+
+
+        /* SHORTS */
+
+        if (
+          value.pathname.startsWith(
+            "/shorts/"
+          )
+        ) {
+
+          return value.pathname
+            .split("/shorts/")[1]
+            .split("/")[0];
+
+        }
+
+
+        /* EMBED */
+
+        if (
+          value.pathname.startsWith(
+            "/embed/"
+          )
+        ) {
+
+          return value.pathname
+            .split("/embed/")[1]
+            .split("/")[0];
+
+        }
+
+      }
+
+      catch (error) {
+
+        console.error(
+          "Invalid YouTube URL:",
+          url,
+          error
+        );
+
+      }
+
+
+      return "";
+
+    }
+
+
+
+    /* =====================================================
+       CREATE EMBED URL
+    ====================================================== */
+
+    function youtubeEmbed(url) {
+
+
+      const id =
+        youtubeId(url);
+
+
+      if (!id) {
+
+        return "";
+
+      }
+
+
+      return `https://www.youtube.com/embed/${id}?rel=0`;
+    }
+
+
+
+    /* =====================================================
+       ESCAPE HTML
+    ====================================================== */
+
+    function escapeHtml(
+      value = ""
+    ) {
+
+
+      return String(value)
+        .replace(
+
+          /[&<>"']/g,
+
+          function(character) {
+
+            return {
+
+              "&":
+                "&amp;",
+
+              "<":
+                "&lt;",
+
+              ">":
+                "&gt;",
+
+              '"':
+                "&quot;",
+
+              "'":
+                "&#039;"
+
+            }[character];
+
+          }
+
+        );
+
+    }
+
+
+
+    /* =====================================================
+       RENDER VIDEOS
+    ====================================================== */
+
+    function renderVideos(
+      list = SITE_DATA.videos
+    ) {
+
+
+      const grid =
+        $("#videoGrid");
+
+
+      if (
+        !list.length
+      ) {
+
+        grid.innerHTML = `
+
+          <div class="empty">
+
+            No videos found.
+            Try another search.
+
+          </div>
+
+        `;
+
+        return;
+
+      }
+
+
+      grid.innerHTML =
+
+        list.map(
+
+          function(video) {
+
+
+            const embed =
+              youtubeEmbed(
+                video.youtube
+              );
+
+
+            return `
+
+              <article
+                class="card video-card"
+              >
+
+
+                <div
+                  class="video-frame"
+                >
+
+                  ${
+                    embed
+
+                    ?
+
+                    `
+
+                      <iframe
+
+                        src="${embed}"
+
+                        title="${escapeHtml(
+                          video.title
+                        )}"
+
+                        loading="lazy"
+
+                        allow="
+                          accelerometer;
+                          autoplay;
+                          clipboard-write;
+                          encrypted-media;
+                          gyroscope;
+                          picture-in-picture;
+                          web-share
+                        "
+
+                        allowfullscreen
+
+                      ></iframe>
+
+                    `
+
+                    :
+
+                    `
+
+                      <div
+                        style="
+                          display:grid;
+                          place-items:center;
+                          height:100%;
+                          color:#9eabc0;
+                          padding:20px;
+                          text-align:center;
+                        "
+                      >
+
+                        Unable to load
+                        this YouTube video.
+
+                      </div>
+
+                    `
+                  }
+
+                </div>
+
+
+                <div class="video-body">
+
+
+                  <span class="tag">
+
+                    ${escapeHtml(
+                      video.category
+                    )}
+
+                  </span>
+
+
+                  <div class="video-title">
+
+                    ${escapeHtml(
+                      video.title
+                    )}
+
+                  </div>
+
+
+                  <p class="video-desc">
+
+                    ${escapeHtml(
+                      video.description
+                    )}
+
+                  </p>
+
+
+                </div>
+
+
+              </article>
+
+            `;
+
+          }
+
+        ).join("");
+
+    }
+
+
+
+    /* =====================================================
+       RENDER NOTES
+    ====================================================== */
+
+    function renderNotes() {
+
+
+      const grid =
+        $("#notesGrid");
+
+
+      if (
+        !SITE_DATA.notes.length
+      ) {
+
+        grid.innerHTML = `
+
+          <div class="empty">
+
+            No PDF notes added yet.
+
+          </div>
+
+        `;
+
+        return;
+
+      }
+
+
+      grid.innerHTML =
+
+        SITE_DATA.notes.map(
+
+          function(note) {
+
+
+            return `
+
+              <article
+                class="card note-card"
+              >
+
+
+                <div
+                  class="note-icon"
+                >
+                  📄
+                </div>
+
+
+                <h3>
+
+                  ${escapeHtml(
+                    note.title
+                  )}
+
+                </h3>
+
+
+                <p>
+
+                  ${escapeHtml(
+                    note.description
+                  )}
+
+                </p>
+
+
+                <div class="note-actions">
+
+
+                  <a
+
+                    class="small-btn"
+
+                    href="${note.file}"
+
+                    target="_blank"
+
+                    rel="noopener"
+
+                  >
+
+                    Open PDF
+
+                  </a>
+
+
+                  <a
+
+                    class="small-btn"
+
+                    href="${note.file}"
+
+                    download
+
+                  >
+
+                    Download
+
+                  </a>
+
+
+                </div>
+
+
+              </article>
+
+            `;
+
+          }
+
+        ).join("");
+
+    }
+
+
+
+    /* =====================================================
+       RENDER PROJECTS
+    ====================================================== */
+
+    function renderProjects() {
+
+
+      const grid =
+        $("#projectGrid");
+
+
+      if (
+        !SITE_DATA.projects.length
+      ) {
+
+        grid.innerHTML = `
+
+          <div class="empty">
+
+            No projects added yet.
+
+          </div>
+
+        `;
+
+        return;
+
+      }
+
+
+      grid.innerHTML =
+
+        SITE_DATA.projects.map(
+
+          function(project) {
+
+
+            return `
+
+              <article
+                class="card project-card"
+              >
+
+
+                <div
+                  class="project-cover"
+                >
+
+                  ${escapeHtml(
+                    project.icon ||
+                    "💡"
+                  )}
+
+                </div>
+
+
+                <div
+                  class="project-body"
+                >
+
+
+                  <h3>
+
+                    ${escapeHtml(
+                      project.title
+                    )}
+
+                  </h3>
+
+
+                  <p>
+
+                    ${escapeHtml(
+                      project.description
+                    )}
+
+                  </p>
+
+
+                  <a
+
+                    class="small-btn"
+
+                    href="${
+                      project.link || "#"
+                    }"
+
+                    target="_blank"
+
+                    rel="noopener"
+
+                  >
+
+                    View Project →
+
+                  </a>
+
+
+                </div>
+
+
+              </article>
+
+            `;
+
+          }
+
+        ).join("");
+
+    }
+
+
+
+    /* =====================================================
+       RENDER WEBSITE INFORMATION
+    ====================================================== */
+
+    function renderSiteInfo() {
+
+
+      $("#navBrandName").textContent =
+        SITE_DATA.name;
+
+
+      $("#heroDescription").textContent =
+        SITE_DATA.heroDescription;
+
+
+      $("#aboutText").textContent =
+        SITE_DATA.about;
+
+
+      $("#youtubeBtn").href =
+        SITE_DATA.youtubeChannel;
+
+
+      $("#emailText").textContent =
+        SITE_DATA.email;
+
+
+      $("#emailLink").href =
+        `mailto:${SITE_DATA.email}`;
+
+
+      $("#phoneText").textContent =
+        SITE_DATA.phone;
+
+
+      $("#phoneLink").href =
+        `tel:${SITE_DATA.phone.replace(
+          /\s+/g,
+          ""
+        )}`;
+
+
+      $("#instagramText").textContent =
+        SITE_DATA.instagram;
+
+
+      $("#mailBtn").href =
+        `mailto:${SITE_DATA.email}?subject=Hello%20Nirbhay%20AI%20World`;
+
+
+      $("#videoCount").textContent =
+        SITE_DATA.videos.length;
+
+
+      $("#noteCount").textContent =
+        SITE_DATA.notes.length;
+
+
+      $("#projectCount").textContent =
+        SITE_DATA.projects.length;
+
+
+      $("#footerText").textContent =
+
+        `© ${new Date().getFullYear()} ${
+          SITE_DATA.name
+        }. All rights reserved.`;
+
+
+
+      $("#socialLinks").innerHTML =
+
+        SITE_DATA.socialLinks.map(
+
+          function(social) {
+
+            return `
+
+              <a
+
+                class="social"
+
+                href="${social.url}"
+
+                target="_blank"
+
+                rel="noopener"
+
+              >
+
+                ${escapeHtml(
+                  social.label
+                )}
+
+              </a>
+
+            `;
+
+          }
+
+        ).join("");
+
+    }
+
+
+
+    /* =====================================================
+       VIDEO SEARCH
+    ====================================================== */
+
+    $("#videoSearch")
+      .addEventListener(
+
+        "input",
+
+        function(event) {
+
+
+          const query =
+            event.target.value
+              .trim()
+              .toLowerCase();
+
+
+          const filtered =
+            SITE_DATA.videos.filter(
+
+              function(video) {
+
+
+                return [
+
+                  video.title,
+
+                  video.description,
+
+                  video.category
+
+                ].some(
+
+                  function(text) {
+
+                    return String(text)
+                      .toLowerCase()
+                      .includes(query);
+
+                  }
+
+                );
+
+              }
+
+            );
+
+
+          renderVideos(
+            filtered
+          );
+
+        }
+
+      );
+
+
+
+    /* =====================================================
+       SHOW ALL
+    ====================================================== */
+
+    $("#allVideosBtn")
+      .addEventListener(
+
+        "click",
+
+        function() {
+
+
+          $("#videoSearch").value =
+            "";
+
+
+          renderVideos();
+
+        }
+
+      );
+
+
+
+    /* =====================================================
+       THEME
+    ====================================================== */
+
+    const savedTheme =
+      localStorage.getItem(
+        "nirbhay-theme"
+      );
+
+
+    if (
+      savedTheme === "light"
+    ) {
+
+      document.body.classList.add(
+        "light"
+      );
+
+    }
+
+
+
+    $("#themeBtn")
+      .addEventListener(
+
+        "click",
+
+        function() {
+
+
+          document.body.classList.toggle(
+            "light"
+          );
+
+
+          localStorage.setItem(
+
+            "nirbhay-theme",
+
+            document.body.classList.contains(
+              "light"
+            )
+              ? "light"
+              : "dark"
+
+          );
+
+        }
+
+      );
+
+
+
+    /* =====================================================
+       MOBILE MENU
+    ====================================================== */
+
+    $("#menuBtn")
+      .addEventListener(
+
+        "click",
+
+        function() {
+
+
+          const nav =
+            document.querySelector(
+              ".nav-links"
+            );
+
+
+          const visible =
+            getComputedStyle(nav)
+              .display !== "none";
+
+
+          if (visible) {
+
+            nav.style.display =
+              "none";
+
+            return;
+
+          }
+
+
+          nav.style.display =
+            "flex";
+
+          nav.style.position =
+            "absolute";
+
+          nav.style.top =
+            "66px";
+
+          nav.style.left =
+            "0";
+
+          nav.style.right =
+            "0";
+
+          nav.style.padding =
+            "18px 5%";
+
+          nav.style.flexDirection =
+            "column";
+
+          nav.style.alignItems =
+            "flex-start";
+
+          nav.style.background =
+            "rgba(4,7,18,0.97)";
+
+          nav.style.backdropFilter =
+            "blur(18px)";
+
+          nav.style.borderBottom =
+            "1px solid var(--border)";
+
+        }
+
+      );
+
+
+
+    /* =====================================================
+       START
+    ====================================================== */
+
+    renderSiteInfo();
+
+    renderVideos();
+
+    renderNotes();
+
+    renderProjects();
+
+
+  </script>
+
+
+</body>
+
+</html>
